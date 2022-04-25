@@ -17,14 +17,18 @@ public class Player : MonoBehaviour
     [SerializeField] Camera mainCamera;
     [SerializeField] float bulletSpeed;
     [SerializeField] GameObject bullet;
-    float randomX, randomY, shootTimer;
+    float randomX, randomY;
     //DeadParticle
     public ParticleSystem deadParticle;
+    public List<Items> items;
 
 
     void Start()
     {
-
+        for (int i = 0; i < items.Count; i++)
+        {
+            items[i].OnEquipped(this);
+        }
         //movement
         playerPosition = transform.position;
         playerMoveInput.Normalize();
@@ -32,17 +36,20 @@ public class Player : MonoBehaviour
         playerHealth = playerMaxHealth;
         healthBar.SetHealth(playerHealth, playerMaxHealth);
         //shoot   
-        shootTimer = 1;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        shootTimer -= Time.deltaTime;
+        
         //Walking Starts
         playerMoveInput.x = Input.GetAxis("Horizontal");
         playerMoveInput.y = Input.GetAxis("Vertical");
-
+        for(int i = 0; i < items.Count; i++)
+        {
+            items[i].Update();
+        }
         PlayerWalk(playerMoveInput.x, playerMoveInput.y);
         //Walking Ends
 
@@ -73,10 +80,18 @@ public class Player : MonoBehaviour
     //missle silahýný ekleme
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Item")) 
+        for (int i = 0; i < items.Count; i++)
         {
-            
-            gameObject.AddComponent<Missle>();
+            items[i].OnTriggerEnter2D(collision.otherCollider,collision.collider);
+        }
+    }
+   
+    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            items[i].OnTriggerExit2D(collision.otherCollider, collision.collider);
         }
     }
 }

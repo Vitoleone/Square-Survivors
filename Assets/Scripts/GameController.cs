@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     
     [SerializeField] List<Sprite> itemSprites;
     List<Items> itemList;
+    
    
    
 
@@ -37,8 +38,6 @@ public class GameController : MonoBehaviour
         player = GameObject.Find("Player");
         //itemselector
         itemList = new List<Items>();
-        itemList.Add(new Items(0,10,10,1,"Büyülü Mermi", "En yakýnýndaki düþmana belirli aralýklarla büyülü mermi yollar",0));
-        itemList.Add(new Items(0,10,10,1,"Soðan", "Etrafýndaki alana giren düþmanlara hasar verir.", 0));
         
         //public Missle()
         //{
