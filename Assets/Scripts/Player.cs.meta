@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3b562544da6820a4480eaba6ec164790
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthBar: {instanceID: 0}
+  - mainCamera: {instanceID: 0}
+  - bullet: {fileID: 5688160417527549530, guid: b55497d5a738e3c44b906687aef0eba5, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
