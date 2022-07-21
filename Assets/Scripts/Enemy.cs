@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.tag == "Bullet")
         {
-            float damage = collision.gameObject.GetComponent<Bullet>().bulletDamage;
+            //float damage = collision.gameObject.GetComponent<Bullet>().bulletDamage;
             GetDamaged(damage);
         }
     }

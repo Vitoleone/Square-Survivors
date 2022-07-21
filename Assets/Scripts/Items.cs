@@ -9,7 +9,6 @@ public abstract class Items : ScriptableObject
     public string description, name;
     public int itemLevel;
     public Sprite itemImage;
-    public abstract void OnEquipped(Player player);
     public abstract void Update();
     
 
@@ -38,8 +37,7 @@ public abstract class Items : ScriptableObject
         this.name = name;
         this.description = description;
     }
-    public abstract void OnTriggerEnter2D(Collider2D itemCollider, Collider2D otherCollider);
-    public abstract void OnTriggerExit2D(Collider2D itemCollider, Collider2D otherCollider);
+ 
 
 }
 

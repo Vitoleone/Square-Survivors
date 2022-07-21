@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7657837978523592567}
   - component: {fileID: 7657837978523592564}
-  - component: {fileID: 7657837978523592565}
   - component: {fileID: 7657837978523592566}
   m_Layer: 0
   m_Name: Garlic
@@ -84,32 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7657837978523592565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7657837978523592562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfd9081536c6996439470e7e978bdda4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 1
-  damage: 1
-  area: 3
-  duration: 0
-  description: Default Description
-  name: Default Item Name
-  itemLevel: 0
-  itemImage: {fileID: 21300000, guid: 248fcb491d41b2641a0dbf99f016efb1, type: 3}
-  gCooldown: 1
-  gDamage: 1
-  gArea: 4
-  gDuration: 0
-  enemies: []
-  itemimage: {fileID: 996616187138916700, guid: a8c34e85b2ad1b347836a03b5d436e6f, type: 3}
 --- !u!58 &7657837978523592566
 CircleCollider2D:
   m_ObjectHideFlags: 0

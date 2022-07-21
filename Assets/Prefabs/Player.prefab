@@ -495,6 +495,10 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   bulletSpeed: 10
   bullet: {fileID: 5688160417527549530, guid: b55497d5a738e3c44b906687aef0eba5, type: 3}
+  deadParticle: {fileID: 0}
+  items:
+  - {fileID: 11400000, guid: 283d3b67da3a2b04bb916bc2f4089b6a, type: 2}
+  - {fileID: 11400000, guid: 676dc6a2097d24744a2f37a2f8af31c4, type: 2}
 --- !u!50 &3065808139306106445
 Rigidbody2D:
   serializedVersion: 4

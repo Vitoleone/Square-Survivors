@@ -4,34 +4,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //itemlar ile etkileþim
+    public EquippedItems equippedItems;
+
     //Walking values
     [SerializeField] float playerSpeed;
     [SerializeField] float playerMaxHealth;
     [SerializeField] float playerHealth;
-    Vector3 playerPosition;
-    Vector2 playerMoveInput;
+    //Movement
+    float horizontalInput;
+    float verticalInput;
+
     public HealthBar healthBar;
     //----------------------------
-
-    //Shoot Values
-    [SerializeField] Camera mainCamera;
-    [SerializeField] float bulletSpeed;
-    [SerializeField] GameObject bullet;
-    float randomX, randomY;
     //DeadParticle
     public ParticleSystem deadParticle;
-    public List<Items> items;
+    
 
 
     void Start()
     {
-        for (int i = 0; i < items.Count; i++)
-        {
-            items[i].OnEquipped(this);
-        }
-        //movement
-        playerPosition = transform.position;
-        playerMoveInput.Normalize();
+        
+       
+        
         //HealthBar
         playerHealth = playerMaxHealth;
         healthBar.SetHealth(playerHealth, playerMaxHealth);
@@ -43,25 +38,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         
-        //Walking Starts
-        playerMoveInput.x = Input.GetAxis("Horizontal");
-        playerMoveInput.y = Input.GetAxis("Vertical");
-        for(int i = 0; i < items.Count; i++)
-        {
-            items[i].Update();
-        }
-        PlayerWalk(playerMoveInput.x, playerMoveInput.y);
+        //Walking
+         horizontalInput = Input.GetAxis("Horizontal");
+         verticalInput = Input.GetAxis("Vertical");
+       
+        PlayerWalk();
         //Walking Ends
 
-        void PlayerWalk(float directionX, float directionY)
-        {
-            transform.position += new Vector3((playerPosition.x + playerSpeed) * directionX * Time.deltaTime, (playerPosition.y + playerSpeed) * directionY * Time.deltaTime, 0);
-
-        }
+        
 
 
     
     }
+
     void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -77,21 +66,25 @@ public class Player : MonoBehaviour
 
         }
     }
-    //missle silahýný ekleme
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        for (int i = 0; i < items.Count; i++)
+        var item = collision.GetComponent<Item>();//yerdeki itemlarý giyme
+        if(item)
         {
-            items[i].OnTriggerEnter2D(collision.otherCollider,collision.collider);
+            equippedItems.AddItem(item,1);
+            Destroy(collision.gameObject);
         }
     }
-   
-    
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnApplicationQuit()
     {
-        for (int i = 0; i < items.Count; i++)
-        {
-            items[i].OnTriggerExit2D(collision.otherCollider, collision.collider);
-        }
+        //equippedItems.items.Clear();//uygulamadan çýktýðýmýzda mevcut itemleri silme
+    }
+
+
+    void PlayerWalk()
+    {
+        transform.Translate(Vector3.right * horizontalInput * playerSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up * verticalInput * playerSpeed * Time.deltaTime);
+
     }
 }

@@ -117,7 +117,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
         itemSelectMainPanel.active = true;
             
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < itemList.Count-1; i++)
         {
 
             randomint = UnityEngine.Random.Range(0, 2);
@@ -127,7 +127,6 @@ public class GameController : MonoBehaviour
             newItemPanel.transform.localScale = Vector3.one;
             newItemPanel.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = itemSprites[randomint];
             newItemPanel.transform.GetChild(1).gameObject.GetComponent<Text>().text = itemList[randomint].name;
-
             newItemPanel.transform.GetChild(2).gameObject.GetComponent<Text>().text = itemList[randomint].itemLevel.ToString();
             newItemPanel.transform.GetChild(3).gameObject.GetComponent<Text>().text = itemList[randomint].description;
             decrease += 4;
