@@ -26,8 +26,13 @@ public class SelectItems : MonoBehaviour
         for (int i = 0; i < selectorItem.items.Count; i++)
         {
             var obj = Instantiate(selectorItem.items[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
-            var levelText = obj.transform.Find("ItemName");
-            levelText.GetComponent<TextMeshProUGUI>().text = selectorItem.items[i].item.itemName;
+            var nameText = obj.transform.Find("ItemName");
+            var descriptionText = obj.transform.Find("ItemDescription");
+            var levelText = obj.transform.Find("ItemLevel");
+
+            nameText.GetComponent<TextMeshProUGUI>().text = selectorItem.items[i].item.itemName;
+            descriptionText.GetComponent<TextMeshProUGUI>().text = selectorItem.items[i].item.description;
+            levelText.GetComponent<TextMeshProUGUI>().text = "Level: " + selectorItem.items[i].item.itemLevel.ToString();
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             
         }
