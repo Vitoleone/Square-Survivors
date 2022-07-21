@@ -66,18 +66,10 @@ public class Player : MonoBehaviour
 
         }
     }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    var item = collision.GetComponent<Item>();//item ekleme
-    //    if(item)
-    //    {
-    //        equippedItems.AddItem(item,1);
-    //        Destroy(collision.gameObject);
-    //    }
-    //}
+   
     private void OnApplicationQuit()
     {
-        //equippedItems.items.Clear();//uygulamadan çýktýðýmýzda mevcut itemleri silme
+        equippedItems.items.Clear();//uygulamadan çýktýðýmýzda mevcut itemleri silme
     }
 
 

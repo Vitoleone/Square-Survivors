@@ -18,11 +18,9 @@ public class GameController : MonoBehaviour
     public float seconds;
     public Text timerText;
     [SerializeField] GameObject itemSelectMainPanel;
-    [SerializeField] GameObject itemPanel;
     
-    [SerializeField] List<Sprite> itemSprites;
-    List<Items> itemList;
     
+
    
    
 
@@ -36,38 +34,9 @@ public class GameController : MonoBehaviour
     {
         
         player = GameObject.Find("Player");
-        //itemselector
-        itemList = new List<Items>();
         
-        //public Missle()
-        //{
-        //    cooldown = 1;
-        //    damage = 10;
-        //    area = 10;
-        //    duration = 1;
-        //    name = "Büyülü Mermi";
-        //    description = "En yakýnýndaki düþmana belirli aralýklarla büyülü mermi yollar.";
-        //    itemImage = itemimage.GetComponent<Image>().sprite;
-        //    itemLevel = item_Level;
-        //}
-
-
-        //public Garlic()
-        //{
-        //    cooldown = gCooldown;
-        //    damage = gDamage;
-        //    area = gArea;
-        //    duration = gDuration;
-        //    name = "Soðan";
-        //    description = "Etrafýndaki alana giren düþmanlara hasar verir.";
-        //    itemImage = itemimage.GetComponent<Image>().sprite;
-        //    itemLevel = item_Level;
-        //}
-
-
-
-
-
+       
+ 
     }
 
     private void Update()
@@ -111,39 +80,12 @@ public class GameController : MonoBehaviour
  
     void LevelUp()
     {
-        int decrease = 0;
-        int randomint = 0;
+        itemSelectMainPanel.GetComponent<SelectItems>().DisplayItems();
         level++;
         Time.timeScale = 0;
-        itemSelectMainPanel.active = true;
-            
-        for(int i = 0; i < itemList.Count-1; i++)
-        {
+        
+        
 
-            randomint = UnityEngine.Random.Range(0, 2);
-            GameObject newItemPanel = Instantiate(itemPanel);
-            newItemPanel.transform.SetParent(itemSelectMainPanel.transform, true);
-            newItemPanel.transform.position = new Vector3(itemSelectMainPanel.transform.position.x, itemSelectMainPanel.transform.position.y - decrease+4.2f, itemSelectMainPanel.transform.position.z);
-            newItemPanel.transform.localScale = Vector3.one;
-            newItemPanel.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = itemSprites[randomint];
-            newItemPanel.transform.GetChild(1).gameObject.GetComponent<Text>().text = itemList[randomint].name;
-            newItemPanel.transform.GetChild(2).gameObject.GetComponent<Text>().text = itemList[randomint].itemLevel.ToString();
-            newItemPanel.transform.GetChild(3).gameObject.GetComponent<Text>().text = itemList[randomint].description;
-            decrease += 4;
-        }
-        
-            
-       
-        
-        //newItemPanel.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = itemList[randomint].
-        //for(int satir = 1; satir <= 3;satir++)
-        //{
-        //    itemSelectMainPanel.transform.GetChild(satir).gameObject.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = itemList[randomint].itemImage; //Item Image
-        //    itemSelectMainPanel.transform.GetChild(satir).gameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = itemList[randomint].name; //Item Name
-        //    itemSelectMainPanel.transform.GetChild(satir).gameObject.transform.GetChild(2).gameObject.GetComponent<Text>().text = itemList[randomint].itemLevel.ToString(); //New texti
-        //    itemSelectMainPanel.transform.GetChild(satir).gameObject.transform.GetChild(3).gameObject.GetComponent<Text>().text = itemList[randomint].description; //Item description
-        //}
-       
     }
     void Count(float timeToDisplay)
     {

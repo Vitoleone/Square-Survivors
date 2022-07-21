@@ -21,7 +21,7 @@ public class DisplayItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateDisplay();
+        //UpdateDisplay();
     }
     public void CreateDisplay()
     {
