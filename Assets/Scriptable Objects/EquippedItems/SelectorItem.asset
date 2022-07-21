@@ -10,6 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 548f0ca1efefa874490e8f752e284b30, type: 3}
-  m_Name: Equipped Items
+  m_Name: SelectorItem
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - item: {fileID: 11400000, guid: 3101526a04c3e64409e33f0856349005, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 7a1f2fb0999ccc34e9387c5bc2d5a114, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 76c0f3e27a6d1fc4eae021f1bafc9c0b, type: 2}
+    amount: 1
