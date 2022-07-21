@@ -21,7 +21,7 @@ public class DisplayItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateDisplay();
     }
     public void CreateDisplay()
     {
@@ -35,5 +35,23 @@ public class DisplayItems : MonoBehaviour
     public Vector3 GetPosition(int i)
     {
         return new Vector3(xStart + (xSpaceBetweenItems *(i%numberOfColumn)), yStart + (-ySpaceBetweenItems *(i/numberOfColumn)),0f);
+    }
+
+    public void UpdateDisplay()
+    {
+        for (int i = 0; i < equippedItems.items.Count; i++)
+        {
+            if (itemsDisplayed.ContainsKey(equippedItems.items[i]))
+            {
+                itemsDisplayed[equippedItems.items[i]].GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].amount.ToString("n0");
+            }
+            else
+            {
+                var obj = Instantiate(equippedItems.items[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+                obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+                obj.GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].amount.ToString("n0");
+                itemsDisplayed.Add(equippedItems.items[i], obj);
+            }
+        }
     }
 }

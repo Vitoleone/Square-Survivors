@@ -951,7 +951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equippedItems: {fileID: 11400000, guid: f3463d695f77eff448e5f9d97d8dac5a, type: 2}
-  numberOfColumn: 6
+  numberOfColumn: 2
   xStart: -450
   yStart: 150
   xSpaceBetweenItems: 115
