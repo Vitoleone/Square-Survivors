@@ -37,7 +37,6 @@ public class SelectItems : MonoBehaviour
             
             if(!ShownedObject.Contains(selectorItem.items[randomItemIndex].item.prefab))//Eðer bir obje daha önce listelenmiþse ve listede varsa buraya girmez ki bir kere gösterilir.
             {
-                Debug.Log("Girdi");
                 var obj = Instantiate(selectorItem.items[randomItemIndex].item.prefab, Vector3.zero, Quaternion.identity, transform);
 
                 ShownedObject.Add(selectorItem.items[randomItemIndex].item.prefab);//Ayný silah 2 kez gözükmesin diye ekledik

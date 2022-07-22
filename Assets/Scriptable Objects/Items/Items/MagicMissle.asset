@@ -15,6 +15,9 @@ MonoBehaviour:
   prefab: {fileID: 3382409687944865902, guid: 2e6d34006031c5549a40b5e65bca970c, type: 3}
   type: 1
   description: "Bir d\xFC\u015Fmana do\u011Fru mermi f\u0131rlat\u0131r."
+  itemName: Magic Missle
+  itemLevel: 1
+  isNew: 1
   damageBonus: 0
   defenceBonus: 0
   maxHealthBonus: 0

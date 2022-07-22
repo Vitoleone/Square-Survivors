@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 8998551053512052463, guid: 124a1e653f5b0ad46b5fdc09ab19c66c, type: 3}
   type: 0
   description: Can doldurur.
-  itemName: Health Neckle
+  itemName: Health
   itemLevel: 1
   isNew: 1
   restoreHealthValue: 10

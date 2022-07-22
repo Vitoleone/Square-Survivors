@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorItem: {fileID: 11400000, guid: a7440853b95acfe4fa0472fec55b8719, type: 2}
-  ItemSelectorPanel: {fileID: 0}
+  equippedItems: {fileID: 11400000, guid: f3463d695f77eff448e5f9d97d8dac5a, type: 2}

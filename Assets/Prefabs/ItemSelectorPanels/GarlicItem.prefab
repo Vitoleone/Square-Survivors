@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5240655125189032863, guid: 45572e69a1d349d4c87e729bc0043328, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: cd8b428c42343a140a6660ab1e0eb243, type: 2}
     - target: {fileID: 6865749321513264040, guid: 45572e69a1d349d4c87e729bc0043328, type: 3}
       propertyPath: m_Name
       value: GarlicItem

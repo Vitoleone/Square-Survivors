@@ -12,7 +12,7 @@ public class DisplayItems : MonoBehaviour
     public int yStart;
     public int xSpaceBetweenItems;
     public int ySpaceBetweenItems;
-    Dictionary<ItemSlot, GameObject> itemsDisplayed = new Dictionary<ItemSlot, GameObject> ();
+    public Dictionary<ItemSlot, GameObject> itemsDisplayed = new Dictionary<ItemSlot, GameObject> ();
     void Start()
     {
         CreateDisplay();
@@ -21,7 +21,7 @@ public class DisplayItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //UpdateDisplay();
+        UpdateDisplay();
     }
     public void CreateDisplay()
     {
@@ -43,15 +43,16 @@ public class DisplayItems : MonoBehaviour
         {
             if (itemsDisplayed.ContainsKey(equippedItems.items[i]))
             {
-                itemsDisplayed[equippedItems.items[i]].GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].amount.ToString("n0");
+                itemsDisplayed[equippedItems.items[i]].GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].item.itemLevel.ToString();
             }
             else
             {
                 var obj = Instantiate(equippedItems.items[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].amount.ToString("n0");
+                obj.GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].item.itemLevel.ToString();
                 itemsDisplayed.Add(equippedItems.items[i], obj);
             }
         }
     }
+    
 }

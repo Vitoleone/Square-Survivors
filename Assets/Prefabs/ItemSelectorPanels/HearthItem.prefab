@@ -135,5 +135,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: HearthItem
       objectReference: {fileID: 0}
+    - target: {fileID: 3939146616645303132, guid: 3b258106bd7dba74fab26e95736656dd, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: af0de87b0af147c469c6ba2f0f854a92, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b258106bd7dba74fab26e95736656dd, type: 3}
