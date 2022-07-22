@@ -75,8 +75,8 @@ public class Player : MonoBehaviour
 
     void PlayerWalk()
     {
-        transform.Translate(Vector3.right * horizontalInput * playerSpeed * Time.deltaTime);
-        transform.Translate(Vector3.up * verticalInput * playerSpeed * Time.deltaTime);
+        transform.Translate(Vector3.right.normalized * horizontalInput * playerSpeed * Time.deltaTime);
+        transform.Translate(Vector3.up.normalized * verticalInput * playerSpeed * Time.deltaTime);
 
     }
 }
