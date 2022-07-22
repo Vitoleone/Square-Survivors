@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     //Movement
     float horizontalInput;
     float verticalInput;
+    public float xBound;
+    public float yBound1,yBound2;
 
     public HealthBar healthBar;
     //----------------------------
@@ -24,8 +26,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
-       
+
+
         
         //HealthBar
         playerHealth = playerMaxHealth;
@@ -37,12 +39,33 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
         
         //Walking
-         horizontalInput = Input.GetAxis("Horizontal");
-         verticalInput = Input.GetAxis("Vertical");
+        if(transform.position.x > xBound)
+        {
+            transform.position = new Vector2(xBound, transform.position.y);
+        }
+        if(transform.position.x < -xBound)
+        {
+            transform.position = new Vector2(-xBound, transform.position.y);
+        }
+        if (transform.position.y < yBound1)
+        {
+            transform.position = new Vector2(transform.position.x, yBound1);
+        }
+        if (transform.position.y > yBound2)
+        {
+            transform.position = new Vector2(transform.position.x, yBound2);
+        }
+        else
+        {
+            PlayerWalk();
+        }
+        
        
-        PlayerWalk();
+        
         //Walking Ends
 
         
