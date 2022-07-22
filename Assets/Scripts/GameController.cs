@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     //Timer Values
     public float seconds;
     public Text timerText;
+
+    
     [SerializeField] GameObject itemSelectMainPanel;
     
     
@@ -45,6 +47,7 @@ public class GameController : MonoBehaviour
         seconds += 1*Time.deltaTime;
         Count(seconds);
         GameOverScreen();
+        
     }
     public void addExp(int expAmount)
     {

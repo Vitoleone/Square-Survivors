@@ -22,14 +22,21 @@ public class ItemSelected : MonoBehaviour
     public void SelectItem()
     {
         ItemSelectorPanel = GameObject.Find("ItemSelector");
+
+        foreach (Transform child in ItemSelectorPanel.transform)//Burada daha önceden instantiate edilmiþ objeleri siliyoruz
+        {
+            Destroy(child.gameObject);
+        }
         var gap = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.transform.Find("ItemName").gameObject;
         for (int i = 0; i < selectorItem.items.Count; i++)
         {
             if(selectorItem.items[i].item.itemName == gap.GetComponent<TextMeshProUGUI>().text)
             {
+               
                 selectorItem.items[i].item.itemLevel++;
                 Time.timeScale = 1;
                 ItemSelectorPanel.SetActive(false);
+                ItemSelectorPanel.GetComponent<SelectItems>().ShownedObject.Clear();//sonradan
                 
             }
         }
