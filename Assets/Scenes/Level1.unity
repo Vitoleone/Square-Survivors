@@ -6269,6 +6269,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3065808139306106446, guid: 1c090c6facdc6d940a58439df1e0e97a, type: 3}
+      propertyPath: xBound
+      value: 52.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065808139306106446, guid: 1c090c6facdc6d940a58439df1e0e97a, type: 3}
+      propertyPath: yBound1
+      value: -9.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065808139306106446, guid: 1c090c6facdc6d940a58439df1e0e97a, type: 3}
+      propertyPath: yBound2
+      value: 69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065808139306106446, guid: 1c090c6facdc6d940a58439df1e0e97a, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
