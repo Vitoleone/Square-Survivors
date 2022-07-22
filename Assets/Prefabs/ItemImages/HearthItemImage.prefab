@@ -99,5 +99,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: HearthItemImage
       objectReference: {fileID: 0}
+    - target: {fileID: 6811169756060118109, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169756060118109, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169756060118110, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169756060118110, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169756060118110, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169756060118110, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
