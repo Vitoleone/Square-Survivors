@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
-  speed: 3
+  speed: 6
   damage: 0.03
   exp: {fileID: 5593526773234176350, guid: 9ab2f2cacb2cc514a9397ce7cb32bbd9, type: 3}
   particle: {fileID: 7617401995155411046, guid: ef348d7841b170f4889e8d72be764d10, type: 3}
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   type: 1
   description: "Bir d\xFC\u015Fmana do\u011Fru mermi f\u0131rlat\u0131r."
   itemName: Magic Missle
-  itemLevel: 1
+  itemLevel: 0
   isNew: 1
   damageBonus: 0
   defenceBonus: 0

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Garlic
   m_EditorClassIdentifier: 
   prefab: {fileID: 1825652370374853142, guid: a26dbf9eff692f54f926af2999d1852b, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
   type: 1
   description: "Alana giren d\xFC\u015Fmanlara hasar verir.\n"
   itemName: Garlic
-  itemLevel: 1
+  itemLevel: 0
   isNew: 1
   damageBonus: 0
   defenceBonus: 0
@@ -25,3 +26,7 @@ MonoBehaviour:
   cooldownBonus: 0
   speedBonus: 0
   areaBonus: 0
+  range: 0
+  coolDown: 1
+  amount: 0
+  damage: 2

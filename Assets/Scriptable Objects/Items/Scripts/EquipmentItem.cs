@@ -12,6 +12,10 @@ public class EquipmentItem : Item
     public float cooldownBonus;
     public float speedBonus;
     public float areaBonus;
+    public float range;
+    public float coolDown;
+    public float amount;
+    public float damage;
 
     public void Awake()
     {

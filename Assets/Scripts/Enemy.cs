@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
         if(player != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            
         }
         
     }
