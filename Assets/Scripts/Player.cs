@@ -9,18 +9,22 @@ public class Player : MonoBehaviour
 
     //Walking values
     [SerializeField] float playerSpeed;
-    [SerializeField] float playerMaxHealth;
-    [SerializeField] float playerHealth;
+    
     //Movement
     float horizontalInput;
     float verticalInput;
     public float xBound;
     public float yBound1,yBound2;
-
+    //Player status
     public HealthBar healthBar;
+    [SerializeField] float playerMaxHealth;
+    [SerializeField] float playerHealth;
+    [SerializeField] float playerRange;
     //----------------------------
-    //DeadParticle
+    //Dead effect
     public ParticleSystem deadParticle;
+    //exp speed
+    float expSpeed = 4.5f;
     
 
 
@@ -36,7 +40,7 @@ public class Player : MonoBehaviour
        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -63,15 +67,28 @@ public class Player : MonoBehaviour
         {
             PlayerWalk();
         }
-        
-       
-        
+
+
+
         //Walking Ends
 
-        
 
+        //Exp Pulling
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, playerRange);
+        foreach(Collider2D col in colliders)
+        {
+            if(col.CompareTag("Exp"))
+            {
+                col.GetComponent<Transform>().Translate((transform.position - col.transform.position) * Time.deltaTime*expSpeed);
+                
+            }
+        }
 
     
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, playerRange);
     }
 
     void OnCollisionStay2D(Collision2D collision)
