@@ -61,7 +61,8 @@ public class ItemSelected : MonoBehaviour
     {
         for (int i = 0; i < selectorItem.items.Count; i++)
         {
-            selectorItem.items[i].item.itemLevel = 1;
+            selectorItem.items[i].item.itemLevel = 0;
+            selectorItem.items[i].item.isNew = true;
         }
     }
 

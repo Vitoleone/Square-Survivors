@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
     public float yBound1,yBound2;
     //Player status
     public HealthBar healthBar;
-    [SerializeField] float playerMaxHealth;
-    [SerializeField] float playerHealth;
-    [SerializeField] float playerRange;
+    [SerializeField] public float playerMaxHealth;
+    [SerializeField] public float playerHealth;
+    [SerializeField] public float playerRange;
     //----------------------------
     //Dead effect
     public ParticleSystem deadParticle;

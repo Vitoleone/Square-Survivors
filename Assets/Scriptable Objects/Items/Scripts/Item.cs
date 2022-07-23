@@ -11,6 +11,7 @@ public enum ItemType
 public abstract class Item : ScriptableObject //Item dan nesne oluþturmak istediðimiz için abstract yaptýk
 {
     public GameObject prefab;
+    public GameObject itemFeature;
     public ItemType type;
 
     [TextArea(15,20)]
