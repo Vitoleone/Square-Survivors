@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: MissleItemSelector
   m_EditorClassIdentifier: 
   prefab: {fileID: 2402721298540569451, guid: 3b258106bd7dba74fab26e95736656dd, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
   type: 1
   description: "Yak\u0131ndaki d\xFC\u015Fmanlara b\xFCy\xFCl\xFC mermi atar."
   itemName: Magic Missle
-  itemLevel: 1
+  itemLevel: 0
   isNew: 1
   damageBonus: 0
   defenceBonus: 0
@@ -25,3 +26,7 @@ MonoBehaviour:
   cooldownBonus: 0
   speedBonus: 0
   areaBonus: 0
+  range: 0
+  coolDown: 0
+  amount: 0
+  damage: 0

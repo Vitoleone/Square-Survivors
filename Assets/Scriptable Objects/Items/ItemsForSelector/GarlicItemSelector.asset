@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: GarlicItemSelector
   m_EditorClassIdentifier: 
   prefab: {fileID: 4554343092989863147, guid: ed4057755517553409f2822877196265, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
   type: 1
   description: "Alan\u0131ndaki d\xFC\u015Fmanlara s\xFCrekli hasar verir."
   itemName: Garlic
-  itemLevel: 1
+  itemLevel: 0
   isNew: 1
   damageBonus: 0
   defenceBonus: 0
@@ -25,3 +26,7 @@ MonoBehaviour:
   cooldownBonus: 0
   speedBonus: 0
   areaBonus: 0
+  range: 0
+  coolDown: 0
+  amount: 0
+  damage: 0

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: HealthItemSelector
   m_EditorClassIdentifier: 
   prefab: {fileID: 8998551053512052463, guid: 124a1e653f5b0ad46b5fdc09ab19c66c, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
   type: 0
   description: Can doldurur.
   itemName: Health
-  itemLevel: 1
+  itemLevel: 0
   isNew: 1
   restoreHealthValue: 10

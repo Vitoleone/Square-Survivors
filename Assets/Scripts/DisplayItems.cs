@@ -15,10 +15,10 @@ public class DisplayItems : MonoBehaviour
     public Dictionary<ItemSlot, GameObject> itemsDisplayed = new Dictionary<ItemSlot, GameObject> ();
     void Start()
     {
-        CreateDisplay();
+        
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         UpdateDisplay();
@@ -43,10 +43,15 @@ public class DisplayItems : MonoBehaviour
         {
             if (itemsDisplayed.ContainsKey(equippedItems.items[i]))
             {
+                
                 itemsDisplayed[equippedItems.items[i]].GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].item.itemLevel.ToString();
             }
             else
             {
+                if(equippedItems.items[i].item.itemLevel == 0 )
+                {
+
+                }
                 var obj = Instantiate(equippedItems.items[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].item.itemLevel.ToString();

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: HealthItem
   m_EditorClassIdentifier: 
   prefab: {fileID: 275390862141349348, guid: 72dc0ddaf4b453e4288a5cbc4510107f, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
   type: 0
   description: "Ald\u0131\u011F\u0131n\u0131zda can yeniler."
   itemName: Health
-  itemLevel: 0
+  itemLevel: 2
   isNew: 1
   restoreHealthValue: 10

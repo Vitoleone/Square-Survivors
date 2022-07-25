@@ -8,6 +8,7 @@ public class ItemSelected : MonoBehaviour
     // Start is called before the first frame update
     public EquippedItems selectorItem;
     public EquippedItems equippedItems;
+    public GameObject player;
     
 
 
@@ -31,7 +32,7 @@ public class ItemSelected : MonoBehaviour
         ItemSelectorPanel = GameObject.Find("ItemSelector");
         
 
-        foreach (Transform child in ItemSelectorPanel.transform)//Burada daha önceden instantiate edilmiþ objeleri siliyoruz
+        foreach (Transform child in ItemSelectorPanel.transform)//Burada daha ï¿½nceden instantiate edilmiï¿½ objeleri siliyoruz
         {
             Destroy(child.gameObject);
         }
@@ -42,14 +43,15 @@ public class ItemSelected : MonoBehaviour
             if(selectorItem.items[i].item.itemName == itemPanelInSelector.GetComponent<TextMeshProUGUI>().text)
             {
 
-                equippedItems.AddItem(selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item, 1);//itemSelectore baðlý olan prefabýn itemýný aldýk ve ekledik. Burasý sayesinde seçtiðimiz item sol altta gözüküyor.
+                equippedItems.AddItem(selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item, 1);//itemSelectore baï¿½lï¿½ olan prefabï¿½n itemï¿½nï¿½ aldï¿½k ve ekledik. Burasï¿½ sayesinde seï¿½tiï¿½imiz item sol altta gï¿½zï¿½kï¿½yor.
 
                 selectorItem.items[i].item.itemLevel++;
-                selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item.itemLevel = selectorItem.items[i].item.itemLevel;//burasý sol altta gözüken itemin levelini item leveline eþitliyor.
+                selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item.itemLevel = selectorItem.items[i].item.itemLevel;//burasï¿½ sol altta gï¿½zï¿½ken itemin levelini item leveline eï¿½itliyor.
+                
 
                 Time.timeScale = 1;
                 ItemSelectorPanel.SetActive(false);
-                ItemSelectorPanel.GetComponent<SelectItems>().ShownedObject.Clear();//Daha önceden gösterilmiþ itemlarýn listesini temizleriz.
+                ItemSelectorPanel.GetComponent<SelectItems>().ShownedObject.Clear();//Daha ï¿½nceden gï¿½sterilmiï¿½ itemlarï¿½n listesini temizleriz.
                 
             }
         }

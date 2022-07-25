@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DenemeItemSelector
   m_EditorClassIdentifier: 
   prefab: {fileID: 4554343092989863147, guid: 62e92fa731dd69640a5d02323293f0c9, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
   type: 1
   description: Deneme1
   itemName: Deneme1
-  itemLevel: 1
+  itemLevel: 0
   isNew: 1
   damageBonus: 0
   defenceBonus: 0
@@ -25,3 +26,7 @@ MonoBehaviour:
   cooldownBonus: 0
   speedBonus: 0
   areaBonus: 0
+  range: 0
+  coolDown: 0
+  amount: 0
+  damage: 0
