@@ -12,7 +12,7 @@ public class SelectItems : MonoBehaviour
     public int ySpaceBetweenItems;
     int randomItemIndex;
     public EquippedItems selectorItem;
-    Transform nameText, descriptionText, levelText;
+    Transform nameText, descriptionText, levelText,newText;
     public List<GameObject> ShownedObject;
     Dictionary<ItemSlot, GameObject> itemsDisplayed = new Dictionary<ItemSlot, GameObject>();
     
@@ -44,11 +44,27 @@ public class SelectItems : MonoBehaviour
                 nameText = obj.transform.Find("ItemName");
                 descriptionText = obj.transform.Find("ItemDescription");
                 levelText = obj.transform.Find("ItemLevel");
+                newText = obj.transform.Find("NewText");
 
                 nameText.GetComponent<TextMeshProUGUI>().text = selectorItem.items[randomItemIndex].item.itemName;
                 descriptionText.GetComponent<TextMeshProUGUI>().text = selectorItem.items[randomItemIndex].item.description;
-                levelText.GetComponent<TextMeshProUGUI>().text = "Level: " + selectorItem.items[randomItemIndex].item.itemLevel.ToString();
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
+
+                if (selectorItem.items[randomItemIndex].item.itemLevel == 0)//item ilk defa gözüküyorsa New yazacak ve leveli gözükmeyecek.
+                {
+                    newText.gameObject.SetActive(true);
+                    levelText.gameObject.SetActive(false);
+                    Debug.Log("girdi");
+                }
+                else
+                {
+                    
+                    levelText.GetComponent<TextMeshProUGUI>().text = "Level: " + selectorItem.items[randomItemIndex].item.itemLevel.ToString();
+                    newText.gameObject.SetActive(false);
+                    levelText.gameObject.SetActive(true);
+                   
+                }
+                
             }
             else
             {
