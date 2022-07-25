@@ -10,6 +10,7 @@ public class ItemSelected : MonoBehaviour
     public EquippedItems equippedItems;
     public GameObject player;
     
+    
 
 
 
@@ -18,7 +19,7 @@ public class ItemSelected : MonoBehaviour
 
     void Start()
     {
-        
+       
        
     }
 
@@ -47,8 +48,8 @@ public class ItemSelected : MonoBehaviour
 
                 selectorItem.items[i].item.itemLevel++;
                 selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item.itemLevel = selectorItem.items[i].item.itemLevel;//buras� sol altta g�z�ken itemin levelini item leveline e�itliyor.
-                
 
+                
                 Time.timeScale = 1;
                 ItemSelectorPanel.SetActive(false);
                 ItemSelectorPanel.GetComponent<SelectItems>().ShownedObject.Clear();//Daha �nceden g�sterilmi� itemlar�n listesini temizleriz.
