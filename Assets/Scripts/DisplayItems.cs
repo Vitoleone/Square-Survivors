@@ -13,9 +13,10 @@ public class DisplayItems : MonoBehaviour
     public int xSpaceBetweenItems;
     public int ySpaceBetweenItems;
     public Dictionary<ItemSlot, GameObject> itemsDisplayed = new Dictionary<ItemSlot, GameObject> ();
+    GameObject player;
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     
@@ -48,16 +49,23 @@ public class DisplayItems : MonoBehaviour
             }
             else
             {
-                if(equippedItems.items[i].item.itemLevel == 0 )
-                {
-
-                }
+               
                 var obj = Instantiate(equippedItems.items[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].item.itemLevel.ToString();
                 itemsDisplayed.Add(equippedItems.items[i], obj);
+                if (!player.transform.FindChild(equippedItems.items[i].item.itemFeature.name + "(Clone)"))//Item player üzerine eklenir
+                {
+                    Equipitem(equippedItems.items[i].item.itemFeature);
+                }
+               
             }
         }
     }
-    
+    public void Equipitem(GameObject item)
+    {
+        var garlicItem = Instantiate(item, player.transform.position, Quaternion.identity);
+        garlicItem.transform.parent = player.transform;
+    }
+
 }
