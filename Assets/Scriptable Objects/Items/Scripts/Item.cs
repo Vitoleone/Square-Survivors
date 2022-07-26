@@ -19,5 +19,6 @@ public abstract class Item : ScriptableObject //Item dan nesne oluþturmak istedi
     public string itemName;
     public int itemLevel = 1;
     public bool isNew = true;
+    public bool isLevelUp = false;
 
 }
