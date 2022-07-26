@@ -6179,6 +6179,10 @@ PrefabInstance:
       propertyPath: playerRange
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3065808139306106446, guid: 1c090c6facdc6d940a58439df1e0e97a, type: 3}
+      propertyPath: playerMaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c090c6facdc6d940a58439df1e0e97a, type: 3}
 --- !u!1001 &4022761881576033634
@@ -6583,6 +6587,10 @@ PrefabInstance:
       propertyPath: selectorItem2
       value: 
       objectReference: {fileID: 11400000, guid: f3463d695f77eff448e5f9d97d8dac5a, type: 2}
+    - target: {fileID: 7656383764620573796, guid: fb911b7a9a13fc04ba94fe00f568d5d2, type: 3}
+      propertyPath: SelectedItem.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9172857581476575180, guid: fb911b7a9a13fc04ba94fe00f568d5d2, type: 3}
       propertyPath: m_Name
       value: ItemSelected

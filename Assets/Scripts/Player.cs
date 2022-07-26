@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     float verticalInput;
     public float xBound;
     public float yBound1,yBound2;
+    public bool isHearthActive = false;
+    public bool isLevelUp = false;
     //Player status
     public HealthBar healthBar;
     [SerializeField] public float playerMaxHealth;
@@ -30,9 +32,9 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        equippedItems.items.Clear();//oyun baþýnda item olmasýn üzerimizde
 
 
-        
         //HealthBar
         playerHealth = playerMaxHealth;
         healthBar.SetHealth(playerHealth, playerMaxHealth);
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+       
         
         //Walking
         if(transform.position.x > xBound)
@@ -68,6 +71,7 @@ public class Player : MonoBehaviour
             PlayerWalk();
         }
 
+       
 
 
         //Walking Ends
@@ -119,4 +123,7 @@ public class Player : MonoBehaviour
         transform.Translate(Vector3.up.normalized * verticalInput * playerSpeed * Time.deltaTime);
 
     }
+    
+   
+   
 }

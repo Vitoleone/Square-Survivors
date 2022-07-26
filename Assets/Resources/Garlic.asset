@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a067f05a480b2c4d87d84289b650418, type: 3}
+  m_Name: Garlic
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1825652370374853142, guid: a26dbf9eff692f54f926af2999d1852b, type: 3}
+  itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
+  type: 1
+  description: "Alana giren d\xFC\u015Fmanlara hasar verir.\n"
+  itemName: Garlic
+  itemLevel: 0
+  isNew: 1
+  damageBonus: 0
+  defenceBonus: 0
+  maxHealthBonus: 0
+  expGainBonus: 0
+  cooldownBonus: 0
+  speedBonus: 0
+  areaBonus: 0
+  range: 0
+  coolDown: 1
+  amount: 0
+  damage: 2

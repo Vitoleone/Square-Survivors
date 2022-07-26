@@ -54,7 +54,7 @@ public class SelectItems : MonoBehaviour
                 {
                     newText.gameObject.SetActive(true);
                     levelText.gameObject.SetActive(false);
-                    Debug.Log("girdi");
+                   
                 }
                 else
                 {

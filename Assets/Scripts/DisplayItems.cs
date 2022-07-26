@@ -12,11 +12,15 @@ public class DisplayItems : MonoBehaviour
     public int yStart;
     public int xSpaceBetweenItems;
     public int ySpaceBetweenItems;
+    
     public Dictionary<ItemSlot, GameObject> itemsDisplayed = new Dictionary<ItemSlot, GameObject> ();
+   
     GameObject player;
     void Start()
     {
         player = GameObject.Find("Player");
+        
+        
     }
 
     
@@ -54,18 +58,25 @@ public class DisplayItems : MonoBehaviour
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = equippedItems.items[i].item.itemLevel.ToString();
                 itemsDisplayed.Add(equippedItems.items[i], obj);
-                if (!player.transform.FindChild(equippedItems.items[i].item.itemFeature.name + "(Clone)"))//Item player üzerine eklenir
-                {
-                    Equipitem(equippedItems.items[i].item.itemFeature);
-                }
+                
+                EquipItem(i);
+               
+               
                
             }
         }
     }
-    public void Equipitem(GameObject item)
+   public void EquipItem(int i)
     {
-        var garlicItem = Instantiate(item, player.transform.position, Quaternion.identity);
-        garlicItem.transform.parent = player.transform;
+        if (!player.transform.GetComponent(equippedItems.items[i].item.itemFeature.name))//Item player üzerine eklenir daha önce item eklenmiþse birdaha eklenmez.
+        {
+
+            var itemComponent = equippedItems.items[i].item.itemFeature.transform.GetComponent(equippedItems.items[i].item.itemFeature.name);
+            
+            player.AddComponent(itemComponent.GetType());
+
+
+        }
     }
 
 }

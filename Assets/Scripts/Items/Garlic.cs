@@ -5,9 +5,9 @@ using UnityEngine;
 public class Garlic : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float garlicRange;
+    public float garlicRange = 1;
     private float playerRange;
-    public EquipmentItem garlic;
+    EquipmentItem garlic;
     List<Collider2D> colliders;
     GameObject player;
     bool isOk = false;
@@ -16,7 +16,7 @@ public class Garlic : MonoBehaviour
         player = GameObject.Find("Player");
         playerRange = player.GetComponent<Player>().playerRange;
         colliders = new List<Collider2D>();
-
+        garlic = Resources.Load("Garlic") as EquipmentItem;
         
         StartCoroutine(GarlicCooldown(garlic.coolDown));
 

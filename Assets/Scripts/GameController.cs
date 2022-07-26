@@ -84,6 +84,7 @@ public class GameController : MonoBehaviour
     void LevelUp()
     {
         itemSelectMainPanel.GetComponent<SelectItems>().DisplayItems();
+        player.GetComponent<Player>().isLevelUp = true;
         level++;
         Time.timeScale = 0;
         
