@@ -27,7 +27,9 @@ public class Player : MonoBehaviour
     public ParticleSystem deadParticle;
     //exp speed
     float expSpeed = 4.5f;
-    
+    //MagicMissle
+    public GameObject bullet;
+
 
 
     void Start()

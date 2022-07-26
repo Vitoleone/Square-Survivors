@@ -8,11 +8,12 @@ public class Enemy : MonoBehaviour
     public GameObject exp;
     GameObject player;
     public ParticleSystem particle;
+    public GameObject enemySpawnerList;
 
     private void Start()
     {
         player = GameObject.Find("Player");
-        
+        enemySpawnerList = GameObject.Find("EnemySpawner");
     }
 
     private void Update()
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(exp, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
+            enemySpawnerList.GetComponent<EnemySpawner>().enemyList.Remove(gameObject);
             Destroy(gameObject);
 
         }
