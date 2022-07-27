@@ -61,11 +61,12 @@ public class MagicMissle : MonoBehaviour
 
     public void FireMissle()
     {
-        missle = Instantiate(bullet, transform.position, Quaternion.identity);
+        missle = Instantiate(bullet, new Vector3(transform.position.x,transform.position.y,-100), Quaternion.identity);
         missle.transform.eulerAngles = new Vector3(-GetAngleFromVectorFloat(-missleDirection), 0, 0);
         missleParticleInstantiate = Instantiate(magicMissleParticle,transform.position,Quaternion.identity);
         missleParticleInstantiate.transform.eulerAngles = new Vector3(-GetAngleFromVectorFloat(-missleDirection), 90, 90);
         missleParticleInstantiate.transform.parent = missle.transform;
+        Destroy(missle, 3f);
 
         missle.GetComponent<Rigidbody2D>().AddRelativeForce(missleDirection * bulletSpeed, ForceMode2D.Impulse);
     }

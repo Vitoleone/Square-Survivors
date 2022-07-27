@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     EquipmentItem magicMissleItem;
     ParticleSystem magicMissleParticle;
     public ParticleSystem bulletParticle;
-    public int enemyCount = 1;
+    public int enemyCount = 1;//magic item ýn içerisinden geçebileceði enemy sayýsý(bunu daha sonra items classýna özellik olarak ekleyip level atladýkça artýracaz)
     void Start()
     { 
         magicMissleItem = Resources.Load("MagicMissle") as EquipmentItem;
@@ -19,9 +19,9 @@ public class Bullet : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("uglum");
+            
             collision.gameObject.GetComponent<Enemy>().GetDamaged(magicMissleItem.damage);
-            enemyCount++;
+            enemyCount--;
             if(enemyCount == 0)
             {
                 Destroy(gameObject);
