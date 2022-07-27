@@ -25,9 +25,9 @@ MonoBehaviour:
   maxHealthBonus: 0
   expGainBonus: 0
   cooldownBonus: 0
-  speedBonus: 0
+  speedBonus: 10
   areaBonus: 0
   range: 0
-  coolDown: 0
+  coolDown: 1.5
   amount: 0
-  damage: 0
+  damage: 1
