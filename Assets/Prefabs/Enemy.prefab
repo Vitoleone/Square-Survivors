@@ -129,6 +129,7 @@ MonoBehaviour:
   exp: {fileID: 5593526773234176350, guid: 9ab2f2cacb2cc514a9397ce7cb32bbd9, type: 3}
   particle: {fileID: 7617401995155411046, guid: ef348d7841b170f4889e8d72be764d10, type: 3}
   enemySpawnerList: {fileID: 0}
+  magicMissleItem: {fileID: 11400000, guid: 6fb5dfc3e8fbc634faf832ab485adf49, type: 2}
 --- !u!50 &1315088075977964467
 Rigidbody2D:
   serializedVersion: 4
