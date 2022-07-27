@@ -10,9 +10,12 @@ public class MagicMissle : MonoBehaviour
     public float fireRate;
     float damage;
     public int bulletAmount;
-    public float bulletSpeed = 200f;
+    public float bulletSpeed;
     EquipmentItem magicMissle;
     public EnemySpawner EnemySpawner;
+    GameObject missle;
+    Vector2 missleRotation;
+    
     List<GameObject> enemyList;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,9 @@ public class MagicMissle : MonoBehaviour
         magicMissle = Resources.Load("MagicMissle") as EquipmentItem;
         fireRate = magicMissle.coolDown;
         damage = magicMissle.damage;
-        //InvokeRepeating("FireMissle", fireRate, fireRate);
+        bulletSpeed = magicMissle.speedBonus;
+       
+        
     }
 
     // Update is called once per frame
@@ -31,22 +36,29 @@ public class MagicMissle : MonoBehaviour
     {
         damage *= magicMissle.damage;
         enemyList = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().enemyList;
-        fireRate -= Time.deltaTime;
-        if(fireRate <= 0)
+        if(enemyList.Count > 0)
         {
+            missleRotation = (-transform.position + FindClosestEnemy(enemyList).transform.position).normalized;
+        }
+        
+       
+        fireRate -= Time.deltaTime;
+
+        if(fireRate <= 0 && missleRotation != null)
+        {
+
             FireMissle();
             fireRate = 1;
         }
         
 
     }
+    
 
     public void FireMissle()
-    {
-        
-        var missle = Instantiate(bullet, transform.position, Quaternion.identity);
-        missle.GetComponent<Rigidbody2D>().AddRelativeForce((-transform.position+FindClosestEnemy(enemyList).transform.position).normalized*bulletSpeed,ForceMode2D.Impulse);
-        
+    {  
+            missle = Instantiate(bullet, transform.position, Quaternion.identity);
+            missle.GetComponent<Rigidbody2D>().AddRelativeForce( missleRotation* bulletSpeed, ForceMode2D.Impulse);
     }
     IEnumerator FireDelay(float fireRate)
     {

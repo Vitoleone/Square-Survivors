@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     GameObject player;
     public ParticleSystem particle;
     public GameObject enemySpawnerList;
+    public EquipmentItem magicMissleItem;
 
     private void Start()
     {
@@ -25,22 +26,17 @@ public class Enemy : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Bullet")
-        {
-            //float damage = collision.gameObject.GetComponent<Bullet>().bulletDamage;
-            GetDamaged(damage);
-        }
-    }
+    
     public void GetDamaged(float damage)
     {
+        
         health -= damage;
+        
         if (health <= 0)
         {
             Instantiate(exp, transform.position, Quaternion.identity);
             Instantiate(particle, transform.position, Quaternion.identity);
-            enemySpawnerList.GetComponent<EnemySpawner>().enemyList.Remove(gameObject);
+            enemySpawnerList.GetComponent<EnemySpawner>().enemyList.Remove(gameObject);//ölen enemy enemyList den silinsin ki ona tekrar ulaþmaya çalýþmayalým
             Destroy(gameObject);
 
         }
