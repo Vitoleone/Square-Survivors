@@ -13,8 +13,10 @@ public class MagicMissle : MonoBehaviour
     public float bulletSpeed;
     EquipmentItem magicMissle;
     public EnemySpawner EnemySpawner;
-    GameObject missle;
-    Vector2 missleRotation;
+    GameObject magicMissleParticle;
+    GameObject missle,missleParticleInstantiate;
+    Vector2 missleDirection;
+    float missleRotation;
     
     List<GameObject> enemyList;
     // Start is called before the first frame update
@@ -27,6 +29,7 @@ public class MagicMissle : MonoBehaviour
         fireRate = magicMissle.coolDown;
         damage = magicMissle.damage;
         bulletSpeed = magicMissle.speedBonus;
+        magicMissleParticle = Resources.Load("MagicMissleParticle") as GameObject;
        
         
     }
@@ -34,17 +37,18 @@ public class MagicMissle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         damage *= magicMissle.damage;
         enemyList = GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().enemyList;
         if(enemyList.Count > 0)
         {
-            missleRotation = (-transform.position + FindClosestEnemy(enemyList).transform.position).normalized;
+            missleDirection = (-transform.position + FindClosestEnemy(enemyList).transform.position).normalized;
         }
         
        
         fireRate -= Time.deltaTime;
 
-        if(fireRate <= 0 && missleRotation != null)
+        if(fireRate <= 0 && missleDirection != null)
         {
 
             FireMissle();
@@ -56,13 +60,14 @@ public class MagicMissle : MonoBehaviour
     
 
     public void FireMissle()
-    {  
-            missle = Instantiate(bullet, transform.position, Quaternion.identity);
-            missle.GetComponent<Rigidbody2D>().AddRelativeForce( missleRotation* bulletSpeed, ForceMode2D.Impulse);
-    }
-    IEnumerator FireDelay(float fireRate)
     {
-        yield return new WaitForSeconds(fireRate);
+        missle = Instantiate(bullet, transform.position, Quaternion.identity);
+        missle.transform.eulerAngles = new Vector3(-GetAngleFromVectorFloat(-missleDirection), 0, 0);
+        missleParticleInstantiate = Instantiate(magicMissleParticle,transform.position,Quaternion.identity);
+        missleParticleInstantiate.transform.eulerAngles = new Vector3(-GetAngleFromVectorFloat(-missleDirection), 90, 90);
+        missleParticleInstantiate.transform.parent = missle.transform;
+
+        missle.GetComponent<Rigidbody2D>().AddRelativeForce(missleDirection * bulletSpeed, ForceMode2D.Impulse);
     }
 
     GameObject FindClosestEnemy(List<GameObject> allEnemies)
@@ -82,5 +87,16 @@ public class MagicMissle : MonoBehaviour
         }
         return closestEnemy;
     }
+    public float GetAngleFromVectorFloat(Vector2 direction)//merminin fýrlatýldýðý açýyý alýrýz
+    {
+        direction = direction.normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        if(angle < 0)
+        {
+            angle += 360;
+        }
+        return angle;
+    }
+  
 
 }
