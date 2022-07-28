@@ -12,6 +12,7 @@ public abstract class Item : ScriptableObject //Item dan nesne oluþturmak istedi
 {
     public GameObject prefab;
     public GameObject itemFeature;
+    public EquipmentItem EquipmentItemAttributes;
     public ItemType type;
 
     [TextArea(15,20)]

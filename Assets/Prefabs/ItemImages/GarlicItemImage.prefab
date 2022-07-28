@@ -91,9 +91,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6811169754701642429, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5660378
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169754701642429, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5561387
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811169754701642429, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
+      propertyPath: m_Color.r
+      value: 0.36578855
+      objectReference: {fileID: 0}
     - target: {fileID: 6811169754701642563, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}
       propertyPath: m_Name
-      value: ItemImage
+      value: GarlicItemImage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3505e878a4f2a479102b3d71a43328, type: 3}

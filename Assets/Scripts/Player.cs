@@ -30,11 +30,14 @@ public class Player : MonoBehaviour
     //MagicMissle
     public GameObject bullet;
 
-
+    private void Awake()
+    {
+        equippedItems.items.Clear();//Oyun baþladýðýnda üzerimizdeki tüm itemleri temizliyoruz
+    }
 
     void Start()
     {
-        equippedItems.items.Clear();//oyun baþýnda item olmasýn üzerimizde
+        
 
 
         //HealthBar
@@ -49,8 +52,8 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
        
-        
         //Walking
         if(transform.position.x > xBound)
         {
@@ -92,10 +95,6 @@ public class Player : MonoBehaviour
 
     
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, playerRange);
-    }
 
     void OnCollisionStay2D(Collision2D collision)
     {
@@ -117,6 +116,7 @@ public class Player : MonoBehaviour
     {
         equippedItems.items.Clear();//uygulamadan çýktýðýmýzda mevcut itemleri silme
     }
+    
 
 
     void PlayerWalk()

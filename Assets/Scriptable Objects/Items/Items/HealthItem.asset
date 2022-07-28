@@ -9,14 +9,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7700a1f18b308f84ebd0defb53026ddb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a067f05a480b2c4d87d84289b650418, type: 3}
   m_Name: HealthItem
   m_EditorClassIdentifier: 
   prefab: {fileID: 275390862141349348, guid: 72dc0ddaf4b453e4288a5cbc4510107f, type: 3}
   itemFeature: {fileID: 5940371865383581085, guid: b7719fe0b0552544989600a77a88e096, type: 3}
-  type: 0
-  description: "Ald\u0131\u011F\u0131n\u0131zda can yeniler."
+  EquipmentItemAttributes: {fileID: 0}
+  type: 1
+  description: "Maximum Hp yi 20 artt\u0131r\u0131r."
   itemName: Health
   itemLevel: 1
   isNew: 1
-  restoreHealthValue: 10
+  isLevelUp: 0
+  damageBonus: 0
+  defenceBonus: 0
+  maxHealthBonus: 0
+  expGainBonus: 0
+  cooldownBonus: 0
+  speedBonus: 0
+  areaBonus: 0
+  range: 0
+  coolDown: 0
+  amount: 0
+  damage: 0

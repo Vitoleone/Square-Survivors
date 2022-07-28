@@ -46,12 +46,12 @@ public class ItemSelected : MonoBehaviour
             if(selectorItem.items[i].item.itemName == itemPanelInSelector.GetComponent<TextMeshProUGUI>().text)
             {
                 
-                equippedItems.AddItem(selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item, 1);//itemSelectore ba�l� olan prefab�n item�n� ald�k ve ekledik. Buras� sayesinde se�ti�imiz item sol altta g�z�k�yor.
+                equippedItems.AddItem(selectorItem.items[i].item.EquipmentItemAttributes, 1);//itemSelectore ba�l� olan prefab�n item�n� ald�k ve ekledik. Buras� sayesinde se�ti�imiz item sol altta g�z�k�yor.
                 Debug.Log(itemPanelInSelector.gameObject.GetComponent<TextMeshProUGUI>().text);
                 
-                selectorItem.items[i].item.itemLevel++;
-                selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item.itemLevel = selectorItem.items[i].item.itemLevel;//buras� sol altta g�z�ken itemin levelini item leveline e�itliyor.
-                selectorItem.items[i].item.prefab.GetComponent<ItemHolder>().item.isLevelUp = true;
+                selectorItem.items[i].item.EquipmentItemAttributes.itemLevel++;
+                selectorItem.items[i].item.EquipmentItemAttributes.itemLevel= selectorItem.items[i].item.EquipmentItemAttributes.itemLevel;//buras� sol altta g�z�ken itemin levelini item leveline e�itliyor.
+                selectorItem.items[i].item.EquipmentItemAttributes.isLevelUp = true;
                 
                 Time.timeScale = 1;
                 ItemSelectorPanel.SetActive(false);
@@ -68,8 +68,8 @@ public class ItemSelected : MonoBehaviour
         for (int i = 0; i < selectorItem.items.Count; i++)
         {
            
-            selectorItem.items[i].item.itemLevel = 0;
-            selectorItem.items[i].item.isNew = true;
+            selectorItem.items[i].item.EquipmentItemAttributes.itemLevel = 0;
+            selectorItem.items[i].item.EquipmentItemAttributes.isNew = true;
         }
     }
     public GameObject GetSelectedItem()

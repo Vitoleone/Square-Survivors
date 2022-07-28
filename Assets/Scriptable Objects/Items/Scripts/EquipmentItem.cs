@@ -16,6 +16,7 @@ public class EquipmentItem : Item
     public float coolDown;
     public float amount;
     public float damage;
+ 
    
 
     public void Awake()

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4554343092989863147, guid: ed4057755517553409f2822877196265, type: 3}
   itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
+  EquipmentItemAttributes: {fileID: 11400000, guid: 989f1c64c6483664ba7e6c1efae1f28b, type: 2}
   type: 1
   description: "Alan\u0131ndaki d\xFC\u015Fmanlara s\xFCrekli hasar verir."
   itemName: Garlic
   itemLevel: 0
   isNew: 1
+  isLevelUp: 0
   damageBonus: 0
   defenceBonus: 0
   maxHealthBonus: 0

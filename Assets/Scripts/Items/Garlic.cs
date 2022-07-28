@@ -9,12 +9,12 @@ public class Garlic : MonoBehaviour
     private float playerRange;
     EquipmentItem garlic;
     List<Collider2D> colliders;
-    GameObject player;
+    Player player;
     bool isOk = false;
     void Start()
     {
-        player = GameObject.Find("Player");
-        playerRange = player.GetComponent<Player>().playerRange;
+        player = GameObject.Find("Player").GetComponent<Player>();
+        
         colliders = new List<Collider2D>();
         garlic = Resources.Load("Garlic") as EquipmentItem;
         
@@ -26,20 +26,31 @@ public class Garlic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(playerRange != player.GetComponent<Player>().playerRange)//Player range i deðiþirse yenisine eþitle.
+        playerRange = player.playerRange;
+
+        if (playerRange != player.GetComponent<Player>().playerRange)//Player range i deðiþirse yenisine eþitle.
         {
             UpdatePlayerRange();
         }
         //alan içerisine giren düþmanlarýn colliderini listeye ekler
-        if(Physics2D.OverlapCircle(transform.position, garlic.range + playerRange).CompareTag("Enemy"))
+        if(Physics2D.OverlapCircle(transform.position, garlic.range + playerRange) != null)
         {
-            colliders.Add(Physics2D.OverlapCircle(transform.position, garlic.range + playerRange));
+            if (Physics2D.OverlapCircle(transform.position, garlic.range + playerRange).CompareTag("Enemy"))
+            {
+                colliders.Add(Physics2D.OverlapCircle(transform.position, garlic.range + playerRange));
+            }
         }
+        
         
         if (isOk)
         {
-
+            foreach (Collider2D collider in colliders)
+            {
+                if(collider == null)
+                {
+                    colliders.Remove(collider);
+                }
+            }
             
             isOk = false;
             GarlicDamage(colliders);
@@ -56,7 +67,7 @@ public class Garlic : MonoBehaviour
     {
         playerRange = player.GetComponent<Player>().playerRange;
     }
-    public void LevelUp()
+    public void LevelUp()//Henüz tamamlanmadý
     {
         garlic.itemLevel++;
         if(garlic.itemLevel % 2 == 0)
@@ -73,7 +84,7 @@ public class Garlic : MonoBehaviour
         List<Collider2D> attacked = new List<Collider2D>();
         foreach (Collider2D collider in colliders.ToArray())
         {
-            if(!collider.GetComponent<BoxCollider2D>().enabled)
+            if(collider == null)
             {
                 colliders.Remove(collider);
             }
