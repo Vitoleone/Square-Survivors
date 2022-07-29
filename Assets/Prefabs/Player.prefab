@@ -696,7 +696,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.2415895, g: 0.8396226, b: 0.68239725, a: 1}
   m_FlipX: 0
@@ -732,6 +732,7 @@ MonoBehaviour:
   playerHealth: 100
   playerRange: 2
   deadParticle: {fileID: 7617401995155411046, guid: fd6c5915ec8621f479cfcbb5015038e1, type: 3}
+  bullet: {fileID: 0}
 --- !u!50 &3065808139306106445
 Rigidbody2D:
   serializedVersion: 4

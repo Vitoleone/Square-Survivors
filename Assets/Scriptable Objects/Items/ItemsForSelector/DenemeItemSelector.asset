@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4554343092989863147, guid: 62e92fa731dd69640a5d02323293f0c9, type: 3}
   itemFeature: {fileID: 102129777938102943, guid: 7bd1508bfe701e249b188f1baaed1e2d, type: 3}
+  EquipmentItemAttributes: {fileID: 11400000, guid: 989f1c64c6483664ba7e6c1efae1f28b, type: 2}
   type: 1
   description: Deneme1
   itemName: Deneme1
   itemLevel: 0
   isNew: 1
+  isLevelUp: 0
   damageBonus: 0
   defenceBonus: 0
   maxHealthBonus: 0
