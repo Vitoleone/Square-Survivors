@@ -9,6 +9,7 @@ public class Garlic : MonoBehaviour
     private float playerRange;
     EquipmentItem garlic;
     List<Collider2D> colliders;
+    GameObject GarlicParticle,GarlicParticleInstantiate;
     Player player;
     bool isOk = false;
     void Start()
@@ -17,7 +18,8 @@ public class Garlic : MonoBehaviour
         
         colliders = new List<Collider2D>();
         garlic = Resources.Load("Garlic") as EquipmentItem;
-        
+        GarlicParticle = Resources.Load("GarlicParticle") as GameObject;
+        GarlicParticleInstantiate = Instantiate(GarlicParticle,transform.position,Quaternion.identity);
         StartCoroutine(GarlicCooldown(garlic.coolDown));
 
 
@@ -26,8 +28,10 @@ public class Garlic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         playerRange = player.playerRange;
-
+        GarlicParticleInstantiate.transform.position = transform.position;
+        GarlicParticleInstantiate.transform.localScale = new Vector3(playerRange + garlicRange, playerRange + garlicRange);
         if (playerRange != player.GetComponent<Player>().playerRange)//Player range i deðiþirse yenisine eþitle.
         {
             UpdatePlayerRange();
@@ -54,6 +58,7 @@ public class Garlic : MonoBehaviour
             
             isOk = false;
             GarlicDamage(colliders);
+            Debug.Log("Hasar Vurdu");
             StartCoroutine(GarlicCooldown(garlic.coolDown));
         }
         
