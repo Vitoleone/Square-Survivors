@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             
-            collision.gameObject.GetComponent<Enemy>().GetDamaged(magicMissleItem.damage);
+            collision.gameObject.GetComponent<Enemy>().GetDamaged(magicMissleItem.damage,magicMissleItem.knockBackPower,magicMissleItem.knockBackDelay);
             enemyCount--;
             if(enemyCount == 0)
             {
