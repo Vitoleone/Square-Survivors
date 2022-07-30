@@ -18,6 +18,8 @@ public abstract class Item : ScriptableObject //Item dan nesne oluþturmak istedi
     [TextArea(15,20)]
     public string description;//Eþya açýklamasý
     public string itemName;
+    public float knockBackPower;
+    public float knockBackDelay;
     public int itemLevel = 1;
     public bool isNew = true;
     public bool isLevelUp = false;
