@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    
     //itemlar ile etkileþim
     public EquippedItems equippedItems;
 
@@ -17,11 +18,12 @@ public class Player : MonoBehaviour
     public float yBound1,yBound2;
     public bool isHearthActive = false;
     public bool isLevelUp = false;
-    //Player status
+    //Player stats
     public HealthBar healthBar;
     [SerializeField] public float playerMaxHealth;
     [SerializeField] public float playerHealth;
     [SerializeField] public float playerRange;
+    [SerializeField] public float playerDamage = 1;
     //----------------------------
     //Dead effect
     public ParticleSystem deadParticle;

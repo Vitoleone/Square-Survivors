@@ -95,9 +95,10 @@ public class Garlic : MonoBehaviour
             }
             if (collider.CompareTag("Enemy") && collider != null && !attacked.Contains(collider))
             {
-                collider.GetComponent<Enemy>().GetDamaged(garlic.damage,garlic.knockBackPower,garlic.knockBackDelay);
+                collider.GetComponent<Enemy>().GetDamaged(garlic.damage+player.playerDamage,garlic.knockBackPower,garlic.knockBackDelay);
                 collider.GetComponent<Rigidbody2D>().AddRelativeForce((collider.transform.position - transform.position) * 2f, ForceMode2D.Impulse);
                 attacked.Add(collider);
+                Debug.Log("Hasar: " + (garlic.damage + player.playerDamage));
                 
                 
             }

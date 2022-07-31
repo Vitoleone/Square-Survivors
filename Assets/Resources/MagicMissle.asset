@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3382409687944865902, guid: 2e6d34006031c5549a40b5e65bca970c, type: 3}
   itemFeature: {fileID: 8899659028504583643, guid: 41895c9ceb1af1349a43c975ea2bb157, type: 3}
+  EquipmentItemAttributes: {fileID: 0}
   type: 1
   description: "Bir d\xFC\u015Fmana do\u011Fru mermi f\u0131rlat\u0131r."
   itemName: Magic Missle
-  itemLevel: 1
+  knockBackPower: 16
+  knockBackDelay: 0.15
+  itemLevel: 0
   isNew: 1
   isLevelUp: 1
   damageBonus: 0
@@ -25,7 +28,7 @@ MonoBehaviour:
   maxHealthBonus: 0
   expGainBonus: 0
   cooldownBonus: 0
-  speedBonus: 10
+  speedBonus: 15
   areaBonus: 0
   range: 0
   coolDown: 1.5
