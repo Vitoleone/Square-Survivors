@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a067f05a480b2c4d87d84289b650418, type: 3}
+  m_Name: AddDamageItem
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3382409687944865902, guid: 18156350c07852b4a84ca734de84722d, type: 3}
+  itemFeature: {fileID: 6464166583435844816, guid: 9fb81537cbe7a634fb8c316b33de9fce, type: 3}
+  EquipmentItemAttributes: {fileID: 0}
+  type: 1
+  description: "Ana hasar\u0131 %10 artt\u0131r\u0131r."
+  itemName: Add Damage Item
+  knockBackPower: 0
+  knockBackDelay: 0
+  itemLevel: 1
+  isNew: 1
+  isLevelUp: 0
+  damageBonus: 1
+  defenceBonus: 0
+  maxHealthBonus: 0
+  expGainBonus: 0
+  cooldownBonus: 0
+  speedBonus: 0
+  areaBonus: 0
+  range: 0
+  coolDown: 0
+  amount: 0
+  damage: 0
