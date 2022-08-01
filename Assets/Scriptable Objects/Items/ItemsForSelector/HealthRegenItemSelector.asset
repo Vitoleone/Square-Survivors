@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a067f05a480b2c4d87d84289b650418, type: 3}
+  m_Name: HealthRegenItemSelector
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2402721298540569451, guid: 58c8f2d7d8238b0438bd9a7f22ed9c1c, type: 3}
+  itemFeature: {fileID: 952210578442831675, guid: 0e83209f37af7e4499e3807b659be84d, type: 3}
+  EquipmentItemAttributes: {fileID: 11400000, guid: 20db7215edc20fa4bb4cab2f6357aa30, type: 2}
+  type: 1
+  description: "Can\u0131 0.5 saniyede bir 0.2 artt\u0131r\u0131r."
+  itemName: Health Regen Item
+  knockBackPower: 0
+  knockBackDelay: 0
+  itemLevel: 0
+  isNew: 1
+  isLevelUp: 0
+  damageBonus: 0
+  defenceBonus: 0
+  maxHealthBonus: 0
+  expGainBonus: 0
+  cooldownBonus: 0
+  speedBonus: 0
+  areaBonus: 0
+  range: 0
+  coolDown: 0
+  amount: 0
+  damage: 0
