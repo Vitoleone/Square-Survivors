@@ -47,7 +47,6 @@ public class ItemSelected : MonoBehaviour
             {
                 
                 equippedItems.AddItem(selectorItem.items[i].item.EquipmentItemAttributes, 1);//itemSelectore ba�l� olan prefab�n item�n� ald�k ve ekledik. Buras� sayesinde se�ti�imiz item sol altta g�z�k�yor.
-                Debug.Log(itemPanelInSelector.gameObject.GetComponent<TextMeshProUGUI>().text);
                 
                 selectorItem.items[i].item.EquipmentItemAttributes.itemLevel++;
                 selectorItem.items[i].item.EquipmentItemAttributes.itemLevel= selectorItem.items[i].item.EquipmentItemAttributes.itemLevel;//buras� sol altta g�z�ken itemin levelini item leveline e�itliyor.

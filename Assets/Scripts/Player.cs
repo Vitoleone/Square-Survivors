@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     [SerializeField] public float playerHealth;
     [SerializeField] public float playerRange;
     [SerializeField] public float playerDamage = 1;
+    [SerializeField] public float playerHealthRegen = 0;
+    [SerializeField] public float playerHealthRegenRate = 1f;
     //----------------------------
     //Dead effect
     public ParticleSystem deadParticle;
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour
         //HealthBar
         playerHealth = playerMaxHealth;
         healthBar.SetHealth(playerHealth, playerMaxHealth);
+        
         //shoot   
        
     }
@@ -54,7 +57,9 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-
+        //Player health regen
+        playerHealthRegenRate -= Time.deltaTime;
+        PlayerHealthRegen();
        
         //Walking
         if(transform.position.x > xBound)
@@ -127,6 +132,22 @@ public class Player : MonoBehaviour
         transform.Translate(Vector3.up.normalized * verticalInput * playerSpeed * Time.deltaTime);
 
     }
+    public IEnumerator PlayerHealthRegenDelay()
+    {
+        yield return new WaitForSeconds(playerHealthRegenRate);
+        
+    }
+    public void PlayerHealthRegen()
+    {
+        if ((playerHealth + playerHealthRegen) < playerMaxHealth && playerHealthRegenRate <= 0)
+        {
+            Debug.Log("Player can: " + playerHealthRegen + " arttý.");
+            playerHealth += playerHealthRegen;
+            healthBar.SetHealth(playerHealth, playerMaxHealth);
+            playerHealthRegenRate = 1;
+        }
+    }
+
     
    
    
