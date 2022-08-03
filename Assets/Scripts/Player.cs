@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public ParticleSystem deadParticle;
     //exp speed
     float expSpeed = 4.5f;
+    
     //MagicMissle
     public GameObject bullet;
 
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         //Player health regen
         playerHealthRegenRate -= Time.deltaTime;
+        
         PlayerHealthRegen();
        
         //Walking
@@ -93,10 +95,12 @@ public class Player : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, playerRange);
         foreach(Collider2D col in colliders)
         {
-            if(col.CompareTag("Exp"))
+            if(col.CompareTag("Exp") && col != null)
             {
-                col.GetComponent<Transform>().Translate((transform.position - col.transform.position) * Time.deltaTime*expSpeed);
                 
+                col.GetComponent<Transform>().Translate((transform.position - col.transform.position) * Time.deltaTime * expSpeed);
+                
+
             }
         }
 
@@ -148,7 +152,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    
-   
-   
+  
+
+
 }

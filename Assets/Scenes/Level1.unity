@@ -6038,6 +6038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8005423625190130070, guid: db65a380be4c9f9499a2fa01a42f81f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db65a380be4c9f9499a2fa01a42f81f0, type: 3}
 --- !u!1001 &8793843692211100384

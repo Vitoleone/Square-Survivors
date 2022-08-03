@@ -58,7 +58,7 @@ public class Garlic : MonoBehaviour
             
             isOk = false;
             GarlicDamage(colliders);
-            Debug.Log("Hasar Vurdu");
+            
             StartCoroutine(GarlicCooldown(garlic.coolDown));
         }
         
@@ -98,7 +98,7 @@ public class Garlic : MonoBehaviour
                 collider.GetComponent<Enemy>().GetDamaged(garlic.damage+player.playerDamage,garlic.knockBackPower,garlic.knockBackDelay);
                 collider.GetComponent<Rigidbody2D>().AddRelativeForce((collider.transform.position - transform.position) * 2f, ForceMode2D.Impulse);
                 attacked.Add(collider);
-                Debug.Log("Hasar: " + (garlic.damage + player.playerDamage));
+                
                 
                 
             }
